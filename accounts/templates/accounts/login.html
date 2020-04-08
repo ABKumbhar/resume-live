@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title> Hi There!</title>
+  </head>
+  <body>
+
+
+<h2> Hi There! </h2>
+<br>
+<h5> First register and login then only you will be able to see other pages regarding online resume builder. Click on submit after completion.</h5>
+<form method="POST" action="">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="jumbotron">
+
+
+
+      <div class="form-group">
+        <a  class="btn btn-dark" href="/login">Login Here</a>
+         <a  class="btn btn-light" href="/register">Go to Register</a>
+         <br>
+         <br>
+         <input type="username" name="username" placeholder="Username">
+       <br>
+       </div>
+
+       <div class="form-group">
+       <input type="password" name="password" placeholder="Password">
+       <br>
+
+
+        <br>
+        </div>
+      {% for i in messages %}
+       {{i}}
+      {% endfor %}
+      <br>
+      <div class="forgot">  Forgot password? </div> <a href={% url 'reset_password' %} class="forgot">Click Here</a>
+
+      </div>
+      <input type="submit" name="Create User" class="btn btn-success">
+         <div class="col-md-4">
+         </div>
+  </div>
+</div>
+</form>
+</body>
+
+
+<style >
+.jumbotron
+{background-image: linear-gradient(DodgerBlue, Blue);
+
+}
+
+.form-group
+{color:white;
+  text-align:center;
+}
+
+.forgot
+{color:white;}
+body
+{
+  background-color : bisque;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

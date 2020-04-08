@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+  </head>
+  <body>
+ <h5> Click on submit after completion of register page</h5>
+<form method="POST" action="">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <div class="jumbotron">
+
+
+
+      <div class="form-group">
+        <a  class="btn btn-light" href={% url 'login' %}>Go to Login</a>
+         <a  class="btn btn-dark" href="/register">Register Here</a>
+         <br>
+         <br>
+      {{form.username}}
+       <br>
+       </div>
+       <div class="form-group">
+
+       {{form.email}}
+        <br>
+       </div>
+       <div class="form-group">
+
+
+        {{form.password1}}
+        <br>
+        </div>
+        <div class="form-group">
+         <div class="input-group-mb-3">
+
+         {{form.password2}}
+         </div>
+         </div>
+         <br>
+         {{form.errors}}
+      </div>
+      <input type="submit" name="Create User" class="btn btn-success">
+         <div class="col-md-4">
+         </div>
+  </div>
+</div>
+</form>
+</body>
+
+<script>
+var abc = document.getElementsByTagName('input');
+  abc[1].placeholder='User name ...';
+  abc[2].placeholder='Email ...';
+  abc[3].placeholder='Password ...';
+  abc[4].placeholder='Confirm Password ...';
+
+</script>
+
+<style >
+.jumbotron
+{background-image: linear-gradient(DodgerBlue, Blue);
+
+}
+
+.form-group
+{color:white;
+  text-align:center;
+}
+
+body
+{
+  background-color : bisque;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

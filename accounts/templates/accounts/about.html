@@ -1,0 +1,15 @@
+{% extends 'accounts/mainfile.html' %}
+
+{% block content %}
+
+<h3>
+Hi There!
+</h3>
+<br>
+<h4>
+My name is Aniket Babasaheb Kumbhar currently pursuing B.Tech. from <b>{%for i in gd%} {{i.Institute}} {% endfor %}</b>
+with CGPA of{%for i in gd%} {{i.total}} {% endfor %} </h4>
+
+
+
+{% endblock %}
