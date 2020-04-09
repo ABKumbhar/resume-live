@@ -1,5 +1,4 @@
 
-import django_heroku
 """
 Django settings for abcd project.
 
@@ -45,7 +44,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
 
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -140,4 +139,3 @@ EMAIL_HOST_PASSWORD = 'Kumbhar18@'
 
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
