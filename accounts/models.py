@@ -3,10 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Customer(models.Model ):
     user = models.OneToOneField(User, null=True, on_delete = models.CASCADE)
-    name = User.objects.get(id=1)
-    def __str__(self):
-        return self.name.get_username()
-
+    
 
 
 
