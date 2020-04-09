@@ -1,36 +1,22 @@
 {% extends 'accounts/mainfile.html' %}
 
 {% block content %}
-<div class="row">
-  <div class="col-sm-12">
-    <h3>Following are some of my projects</h3>
-    <br>
-  </div>
-<div>
-<div class="row">
-  <div class="col-sm-1">
-  </div>
-  <div class="col-sm-9">
-    <b> Project Name</b>
-  </div>
-  <div class="col-sm-2">
-    <b> Description </b>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm">
-    <div class="card card-body">
-<table class="table">
+<table class="table-hover table">
+
+
+<tr>
+
+    <th>Activity</th>
+    <th>Description</th>
+</tr>
 {%for i in mp %}
+
   <tr>
 
   <td>{{i.name}}</td>
   <td>{{i.description}}</td>
   </tr>
-
 {% endfor %}
 </table>
-</div>
-</div>
-</div>
+
 {% endblock %}
