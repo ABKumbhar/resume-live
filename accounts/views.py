@@ -2,10 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from .models import *
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from .forms import *
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 
 @login_required(login_url='login')
 def homepage(request):
@@ -49,11 +50,36 @@ def loginpage(request):
     return render(request,'accounts/login.html')
 
 def logoutuser(request):
-    logout(request)
+
     return redirect('login')
 
+
 def feedback(request):
-    return render(request,'accounts/feedback.html')
+
+    if request.method=='POST':
+        feed = feedbackform(request.POST)
+
+        if feed.is_valid():
+            subject = feed.cleaned_data['subject']
+            name = feed.cleaned_data['name']
+            email = feed.cleaned_data['email']
+            message = feed.cleaned_data['message']
+            recipients = ['aniket.cogni18@gmail.com']
+
+            send_mail(subject, 'This is email  -' + email + '\n' + 'This is name    -' +  name+'\n' + message, email,recipients)
+            return redirect('home')
+
+
+
+    else:
+        feed= feedbackform()
+
+    return render(request, 'accounts/feedback.html', {'feed': feed})
+
+
+
+
+
 
 @login_required(login_url='login')
 def myprojects(request):

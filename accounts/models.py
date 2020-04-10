@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django import forms
+
 # Create your models here.
 class Customer(models.Model ):
     user = models.OneToOneField(User, null=True, on_delete = models.CASCADE)
-    
+
 
 
 
@@ -16,6 +18,12 @@ class Projects(models.Model):
     customer = models.ForeignKey(Customer,null=True, on_delete = models.SET_NULL)
     def __str__(self):
         return self.name
+
+
+
+
+
+
 
 class Achievement(models.Model):
     name = models.TextField()
