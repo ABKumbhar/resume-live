@@ -7,14 +7,14 @@ from . import views
 
 urlpatterns = [
 
-    path('',views.homepage),
+
     path('homepage/',views.homepage,name='home'),
     path('logout/',views.logoutuser,name='logout'),
 
 
     path('about/',views.about),
     path('register/',views.register),
-    path('accounts/login/',views.loginpage,name='login'),
+    path('',views.loginpage,name='login'),
     path('feedback/',views.feedback,name='feedback'),
     path('myprojects/',views.myprojects),
     path('extracurricular/',views.extracurricular),

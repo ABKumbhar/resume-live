@@ -8,11 +8,9 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 
-@login_required(login_url='login')
 def homepage(request):
     return render(request,'accounts/HomePage.html')
 
-@login_required(login_url='login')
 def about(request):
     gd = Grades.objects.all()
 
@@ -81,13 +79,11 @@ def feedback(request):
 
 
 
-@login_required(login_url='login')
 def myprojects(request):
     mp = Projects.objects.all()
 
     return render(request,'accounts/myprojects.html',{'mp':mp})
 
-@login_required(login_url='login')
 def extracurricular(request):
     ec = ExtraCurricular.objects.all()
 

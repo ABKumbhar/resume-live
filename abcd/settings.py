@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'dc4x0gvkphut7m)a9*fe7zcz4*$jar@f*1eblf-&eudls_9jgr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['resumebuilder-ani.herokuapp.com','127.0.0.1',]
 
