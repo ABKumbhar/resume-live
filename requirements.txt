@@ -16,7 +16,7 @@ gunicorn==20.0.4
 idna==2.9
 jmespath==0.9.5
 mysql-connector==2.2.9
-Pillow==7.1.1
+Pillow==8.2.0
 pipenv==2018.11.26
 psycopg2==2.8.5
 python-dateutil==2.8.1
